@@ -13,5 +13,11 @@ function validateInput() {
   console.log(password);
   let username = document.getElementById("username").value;
   console.log(username);
+
+  if (!email.match(validEmail)) {
+    console.log(email + " please enter a valid email address!");
+  } else {
+    console.log("We will send a weekly newsletter to " + email);
+  }
 }
 button.addEventListener("click", validateInput);
