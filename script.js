@@ -3,6 +3,9 @@ let errorAlert = document.getElementsByClassName("error");
 /*for (let i = 0; i < errorAlert.length; i++) {
   errorAlert.classList.add("hide");
 }*/
+let validEmail = /([a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\.[a-zA-Z0-9.-_]+)/g;
+let validUserName = /([a-zA-Z]+)/g;
+let validPassword = /([a-zA-Z0-9.-_@\/])/g;
 function validateInput() {
   let email = document.getElementById("email").value;
   console.log(email);
