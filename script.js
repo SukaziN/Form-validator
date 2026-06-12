@@ -25,6 +25,6 @@ function validateInput() {
     : console.log(
         username +
           " username cannot contain spaces, numbers or special characters.",
-      );
+      ); //username logic worked at first but now exclusively returns else statement (code is airtight, could be a device issue, run debug session after a while and maybe reboot session or device)
 }
 button.addEventListener("click", validateInput);
