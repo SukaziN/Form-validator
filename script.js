@@ -1,5 +1,8 @@
 let button = document.getElementById("submit");
 let errorAlert = document.querySelector(".error");
+let emailFeedback = document.getElementById("emailFeedback");
+let passwordFeedback = document.getElementById("passwordFeedback");
+let usernameFeedback = document.getElementById("usernameFeedback");
 let validEmail = /([a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\.[a-zA-Z0-9.-_]+)/g;
 let specialCharacters = /[\d\s-_&%#@!|]+/g;
 let validPassword = /([\d.-_]+)/g;
@@ -15,7 +18,7 @@ function validateInput() {
     console.log("We will send a weekly newsletter to " + email);
     errorAlert.classList.remove("hide"); //when adding or removing classLists, you cannot pair them as you do in html. They must be coded individually
     errorAlert.classList.remove("error");
-    errorAlert.textContent = "We will send a weekly newsletter to " + email;
+    emailFeedback.textContent = "We will send a weekly newsletter to " + email;
   } //you must prevent the default behavior of the form elements to clear fields to retain user interaction thereby improving responsiveness and reassuring the user
 
   if (password.match(validPassword) == null || password.length < 8) {
@@ -35,7 +38,7 @@ function validateInput() {
     console.log("Welcome aboard " + username);
     errorAlert.classList.remove("error");
     errorAlert.classList.remove("hide");
-    errorAlert.textContent = "Welcome aboard " + username;
+    usernameFeedback.textContent = "Welcome aboard " + username;
   } else {
     console.log(
       username +
