@@ -26,15 +26,21 @@
     <form name="form">
       <label for="email"> Email :</label>
       <input id="email" type="text" name="email" />
-      <span class="error hide"></span>
+      <span class="error hide"> Please enter a valid email address!</span>
 
       <br />
       <label for="password"> Password : </label>
       <input id="password" type="password" name="password" />
-      <span class="error hide"></span> <br />
+      <span class="error hide"
+        >Please enter a strong password! Pro-Tip: a mixture of lowercase and
+        uppercase letters, numbers, and special characters.</span
+      >
+      <br />
       <label for="username"> User Name :</label>
       <input id="username" type="text" name="userName" />
-      <span class="error hide"></span>
+      <span class="error hide"
+        >Username cannot contain spaces, numbers or special characters.</span
+      >
       <br />
       <input id="submit" type="submit" value="Sign Up" />
     </form>
