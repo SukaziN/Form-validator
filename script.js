@@ -2,8 +2,8 @@ let button = document.getElementById("submit");
 let errorAlert = document.getElementsByClassName("error");
 
 let validEmail = /([a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\.[a-zA-Z0-9.-_]+)/g;
-let specialCharacters = /[\d\s.-_&%#@!|]/g;
-let validPassword = /([\d\s.-_]+)/g;
+let specialCharacters = /[\d\s-_&%#@!|]+/g;
+let validPassword = /([\d.-_]+)/g;
 function validateInput() {
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
