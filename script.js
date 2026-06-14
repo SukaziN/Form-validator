@@ -46,5 +46,5 @@ function validateInput() {
     );
     errorAlert.classList.remove("hide");
   }
-}
+} //code outputs only in the email span though so i need to separate each validation into its own function for clarity
 button.addEventListener("click", validateInput);
