@@ -43,7 +43,7 @@ button.addEventListener("click", validatePasswordInput);
 function validateUsername() {
   event.preventDefault();
   let username = document.getElementById("username").value;
-  if (username.match(specialCharacters) == null) {
+  if (username.length >= 2 && username.match(specialCharacters) == null) {
     console.log("Welcome aboard " + username);
     usernameFeedback.classList.remove("error");
     usernameFeedback.classList.remove("hide");
@@ -51,7 +51,7 @@ function validateUsername() {
   } else {
     console.log(
       username +
-        " username cannot contain spaces, numbers or special characters.",
+        " username cannot be empty, contain spaces, numbers or special characters.",
     );
     usernameFeedback.classList.remove("hide");
   }
