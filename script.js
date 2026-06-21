@@ -6,12 +6,10 @@ let usernameFeedback = document.getElementById("usernameFeedback");
 let validEmail = /([a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\.[a-zA-Z0-9.-_]+)/g;
 let specialCharacters = /[\d\s-_&%#@!|]+/g;
 let validPassword = /([\d.-_]+)/g;
-function validateInput() {
+
+function validateEmailInput() {
   event.preventDefault();
   let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-  let username = document.getElementById("username").value;
-
   if (!email.match(validEmail)) {
     console.log(email + " please enter a valid email address!");
     errorAlert.classList.remove("hide"); //if the className was used to select the element, classList does not work
@@ -21,7 +19,12 @@ function validateInput() {
     errorAlert.classList.remove("error");
     emailFeedback.textContent = "We will send a weekly newsletter to " + email;
   } //you must prevent the default behavior of the form elements to clear fields to retain user interaction thereby improving responsiveness and reassuring the user
+} //code outputs only in the email span though so i need to separate each validation into its own function for clarity
+button.addEventListener("click", validateEmailInput);
 
+function validatePasswordInput() {
+  event.preventDefault();
+  let password = document.getElementById("password").value;
   if (password.match(validPassword) == null || password.length < 8) {
     console.log(
       password +
@@ -34,7 +37,12 @@ function validateInput() {
     errorAlert.classList.remove("hide");
     alert("Would you like to save your password?");
   }
+}
+button.addEventListener("click", validatePasswordInput);
 
+function validateUsername() {
+  event.preventDefault();
+  let username = document.getElementById("username").value;
   if (username.match(specialCharacters) == null) {
     console.log("Welcome aboard " + username);
     errorAlert.classList.remove("error");
@@ -47,5 +55,5 @@ function validateInput() {
     );
     errorAlert.classList.remove("hide");
   }
-} //code outputs only in the email span though so i need to separate each validation into its own function for clarity
-button.addEventListener("click", validateInput);
+}
+button.addEventListener("click", validateUsername);
