@@ -39,3 +39,4 @@ function validateUsername() {
   }
 }
 button.addEventListener("click", validateUsername);
+//final improvement to be made: session needs to be refreshed after each click to respond to new inputs as programmed and erase the previous entries since the prevent default method is applied to each of these functions. Make it so session registers the difference without need for refreshing the page
