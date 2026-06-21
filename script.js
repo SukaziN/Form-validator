@@ -1,8 +1,5 @@
 let button = document.getElementById("submit");
 //let errorAlert = document.querySelector(".error");  this is probably why removing and adding the css class only works once (first instance) coz the selector is not specific and therefore only selects the first of its kind and stops looking
-let emailError;
-let passwordError;
-let usernameError;
 let emailFeedback = document.getElementById("emailFeedback");
 let passwordFeedback = document.getElementById("passwordFeedback");
 let usernameFeedback = document.getElementById("usernameFeedback");
@@ -15,11 +12,11 @@ function validateEmailInput() {
   let email = document.getElementById("email").value;
   if (!email.match(validEmail)) {
     console.log(email + " please enter a valid email address!");
-    errorAlert.classList.remove("hide"); //if the className was used to select the element, classList does not work
+    emailFeedback.classList.remove("hide"); //if the className was used to select the element, classList does not work
   } else {
     console.log("We will send a weekly newsletter to " + email);
-    errorAlert.classList.remove("hide"); //when adding or removing classLists, you cannot pair them as you do in html. They must be coded individually
-    errorAlert.classList.remove("error");
+    emailFeedback.classList.remove("hide"); //when adding or removing classLists, you cannot pair them as you do in html. They must be coded individually
+    emailFeedback.classList.remove("error");
     emailFeedback.textContent = "We will send a weekly newsletter to " + email;
   } //you must prevent the default behavior of the form elements to clear fields to retain user interaction thereby improving responsiveness and reassuring the user
 } //code outputs only in the email span though so i need to separate each validation into its own function for clarity
@@ -33,11 +30,11 @@ function validatePasswordInput() {
       password +
         " please enter a strong password! Pro-Tip: a mixture of lowercase and uppercase letters, numbers, and special characters.",
     );
-    errorAlert.classList.remove("hide");
+    passwordFeedback.classList.remove("hide");
   } else {
     console.log("Please confirm your password below.");
-    errorAlert.classList.remove("error");
-    errorAlert.classList.remove("hide");
+    passwordFeedback.classList.remove("error");
+    passwordFeedback.classList.remove("hide");
     alert("Would you like to save your password?");
   }
 }
@@ -48,15 +45,15 @@ function validateUsername() {
   let username = document.getElementById("username").value;
   if (username.match(specialCharacters) == null) {
     console.log("Welcome aboard " + username);
-    errorAlert.classList.remove("error");
-    errorAlert.classList.remove("hide");
+    usernameFeedback.classList.remove("error");
+    usernameFeedback.classList.remove("hide");
     usernameFeedback.textContent = "Welcome aboard " + username;
   } else {
     console.log(
       username +
         " username cannot contain spaces, numbers or special characters.",
     );
-    errorAlert.classList.remove("hide");
+    usernameFeedback.classList.remove("hide");
   }
 }
 button.addEventListener("click", validateUsername);
