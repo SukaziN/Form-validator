@@ -1,5 +1,8 @@
 let button = document.getElementById("submit");
-let errorAlert = document.querySelector(".error");
+//let errorAlert = document.querySelector(".error");  this is probably why removing and adding the css class only works once (first instance) coz the selector is not specific and therefore only selects the first of its kind and stops looking
+let emailError;
+let passwordError;
+let usernameError;
 let emailFeedback = document.getElementById("emailFeedback");
 let passwordFeedback = document.getElementById("passwordFeedback");
 let usernameFeedback = document.getElementById("usernameFeedback");
