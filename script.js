@@ -7,6 +7,7 @@ let validEmail = /([a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\.[a-zA-Z0-9.-_]+)/g;
 let specialCharacters = /[\d\s-_&%#@!|]+/g;
 let validPassword = /([\d.-_]+)/g;
 function validateInput() {
+  event.preventDefault();
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
   let username = document.getElementById("username").value;
